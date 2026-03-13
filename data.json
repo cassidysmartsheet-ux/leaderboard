@@ -1,22 +1,11 @@
 {
   "maxRevenue": 6000000,
-  "repOrder": ["Bill", "Dan D", "Dan V", "Ken", "Scott"],
-  "jobs": [
-    {"rep": "Bill", "date": "2025-12-01", "amount": 300244, "gp": 43.6},
-    {"rep": "Bill", "date": "2026-01-07", "amount": 202118, "gp": 43.6},
-    {"rep": "Bill", "date": "2026-01-24", "amount": 214085, "gp": 43.6},
-    {"rep": "Bill", "date": "2026-02-01", "amount": 387860, "gp": 43.6},
-    {"rep": "Bill", "date": "2026-03-10", "amount": 717122, "gp": 43.6},
-    {"rep": "Bill", "date": "2026-04-01", "amount": 1391053, "gp": 43.6},
-    {"rep": "Dan D", "date": "2026-01-01", "amount": 394257, "gp": 45.7},
-    {"rep": "Dan D", "date": "2026-02-10", "amount": 729743, "gp": 45.7},
-    {"rep": "Dan D", "date": "2026-03-15", "amount": 1258600, "gp": 45.7},
-    {"rep": "Ken", "date": "2026-01-15", "amount": 320649, "gp": 38.4},
-    {"rep": "Ken", "date": "2026-02-01", "amount": 330958, "gp": 38.4},
-    {"rep": "Scott", "date": "2025-12-01", "amount": 1494801, "gp": 30.7},
-    {"rep": "Scott", "date": "2026-01-01", "amount": 553633, "gp": 30.7},
-    {"rep": "Scott", "date": "2026-02-01", "amount": 797167, "gp": 30.7},
-    {"rep": "Scott", "date": "2026-02-20", "amount": 1205111, "gp": 30.7},
-    {"rep": "Scott", "date": "2026-04-01", "amount": 887330, "gp": 30.7}
-  ]
+  "repOrder": [
+    "Bill",
+    "Dan D",
+    "Dan V",
+    "Ken",
+    "Scott"
+  ],
+  "jobs": []
 }
