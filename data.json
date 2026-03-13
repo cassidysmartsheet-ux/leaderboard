@@ -7,5 +7,12 @@
     "Ken",
     "Scott"
   ],
-  "jobs": []
+  "jobs": [
+    {
+      "rep": "Bill",
+      "date": "2026-03-10",
+      "amount": 268293,
+      "gp": 0
+    }
+  ]
 }
