@@ -1,5 +1,7 @@
 {
   "maxRevenue": 6000000,
+  "maxEstimateRevenue": 8000000,
+  "backlog": 2.78,
   "repOrder": [
     "Bill",
     "Dan D",
@@ -11,74 +13,155 @@
     {
       "rep": "Bill",
       "date": "2026-03-10",
+      "count": 1,
       "amount": 268293,
       "gp": 0
     },
     {
       "rep": "Bill",
       "date": "2026-03-17",
+      "count": 1,
       "amount": 920606,
       "gp": 0
     },
     {
       "rep": "Bill",
       "date": "2026-03-24",
+      "count": 2,
       "amount": 9004,
       "gp": 0
     },
     {
       "rep": "Bill",
       "date": "2026-03-31",
+      "count": 3,
       "amount": 98076,
       "gp": 0
     },
     {
       "rep": "Dan D",
       "date": "2026-03-10",
+      "count": 1,
       "amount": 947761,
+      "gp": 0
+    },
+    {
+      "rep": "Dan D",
+      "date": "2026-03-24",
+      "count": 0,
+      "amount": 0,
       "gp": 0
     },
     {
       "rep": "Dan V",
       "date": "2026-03-24",
+      "count": 5,
       "amount": 195020,
       "gp": 0
     },
     {
       "rep": "Ken",
       "date": "2026-03-10",
+      "count": 1,
       "amount": 34444,
       "gp": 0
     },
     {
       "rep": "Ken",
       "date": "2026-03-17",
+      "count": 1,
       "amount": 170281,
       "gp": 0
     },
     {
       "rep": "Ken",
       "date": "2026-03-24",
+      "count": 1,
       "amount": 41343,
       "gp": 0
     },
     {
       "rep": "Scott",
       "date": "2026-03-10",
+      "count": 1,
       "amount": 327008,
       "gp": 0
     },
     {
       "rep": "Scott",
       "date": "2026-03-17",
+      "count": 1,
       "amount": 613040,
       "gp": 0
     },
     {
       "rep": "Scott",
       "date": "2026-03-24",
+      "count": 1,
       "amount": 3085,
       "gp": 0
+    }
+  ],
+  "estimates": [
+    {
+      "rep": "Bill",
+      "date": "2026-03-24",
+      "count": 14,
+      "amount": 2543029
+    },
+    {
+      "rep": "Dan D",
+      "date": "2026-03-24",
+      "count": 1,
+      "amount": 994805
+    },
+    {
+      "rep": "Dan V",
+      "date": "2026-03-24",
+      "count": 14,
+      "amount": 1916381
+    },
+    {
+      "rep": "Ken",
+      "date": "2026-03-24",
+      "count": 6,
+      "amount": 393989
+    },
+    {
+      "rep": "Scott",
+      "date": "2026-03-24",
+      "count": 10,
+      "amount": 845235
+    },
+    {
+      "rep": "Bill",
+      "date": "2026-03-31",
+      "count": 9,
+      "amount": 944763
+    },
+    {
+      "rep": "Dan D",
+      "date": "2026-03-31",
+      "count": 2,
+      "amount": 4543800
+    },
+    {
+      "rep": "Dan V",
+      "date": "2026-03-31",
+      "count": 17,
+      "amount": 3534184
+    },
+    {
+      "rep": "Ken",
+      "date": "2026-03-31",
+      "count": 4,
+      "amount": 655484
+    },
+    {
+      "rep": "Scott",
+      "date": "2026-03-31",
+      "count": 7,
+      "amount": 883365
     }
   ]
 }

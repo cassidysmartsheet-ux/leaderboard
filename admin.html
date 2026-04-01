@@ -11,9 +11,8 @@ body{
   background:linear-gradient(160deg,#0a0e14 0%,#141c28 40%,#1a1a1a 100%);
   color:#fff;min-height:100vh;padding:20px;
 }
-.container{max-width:900px;margin:0 auto}
+.container{max-width:1000px;margin:0 auto}
 
-/* HEADER */
 .header{
   display:flex;align-items:center;justify-content:center;gap:20px;
   margin-bottom:20px;padding-bottom:15px;position:relative;
@@ -28,7 +27,6 @@ body{
 .htxt h1 span{color:#CC0000}
 .htxt p{font-size:0.75rem;color:#777;letter-spacing:3px;text-transform:uppercase;margin-top:2px}
 
-/* SETUP BANNER */
 .setup-banner{
   background:linear-gradient(135deg,rgba(204,0,0,0.15),rgba(30,5,5,0.8));
   border:1px solid rgba(204,0,0,0.4);border-radius:12px;
@@ -45,19 +43,17 @@ body{
   margin-top:10px;padding:10px 30px;background:#CC0000;color:#fff;
   border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:0.9rem;
 }
-.setup-banner button:hover{background:#ff1a1a}
 
-/* CARDS */
 .card{
   background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));
   backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.08);
   border-radius:14px;padding:20px;margin-bottom:16px;
 }
 .card h2{font-size:1.1rem;color:#CC0000;margin-bottom:12px;letter-spacing:1px}
+.card h2.est-color{color:#4ea8ff}
 
-/* FORM */
 .form-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:10px}
-.form-group{display:flex;flex-direction:column;gap:4px;flex:1;min-width:120px}
+.form-group{display:flex;flex-direction:column;gap:4px;flex:1;min-width:100px}
 .form-group label{font-size:0.7rem;color:#aaa;text-transform:uppercase;letter-spacing:1px}
 .form-group input,.form-group select{
   padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);
@@ -70,18 +66,18 @@ body{
 }
 .btn-add{background:#CC0000;color:#fff}
 .btn-add:hover{background:#ff1a1a;box-shadow:0 0 20px rgba(204,0,0,0.4)}
+.btn-est{background:#2a7fff;color:#fff}
+.btn-est:hover{background:#4ea8ff;box-shadow:0 0 20px rgba(78,168,255,0.4)}
 .btn-save{background:linear-gradient(135deg,#CC0000,#990000);color:#fff;font-size:1rem;padding:14px 40px;width:100%}
 .btn-save:hover{box-shadow:0 0 30px rgba(204,0,0,0.5)}
 .btn-save:disabled{opacity:0.4;cursor:not-allowed}
 .btn-del{background:rgba(255,255,255,0.08);color:#ff6666;font-size:0.75rem;padding:6px 12px;border-radius:6px}
 .btn-del:hover{background:rgba(255,0,0,0.15)}
 
-/* SETTINGS ROW */
 .settings-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:10px}
-.settings-row .form-group{flex:none;width:200px}
-.settings-row .form-group.wide{flex:1;min-width:200px}
+.settings-row .form-group{flex:none;width:180px}
+.settings-row .form-group.wide{flex:1;min-width:180px}
 
-/* TABLE */
 .jobs-table{width:100%;border-collapse:collapse;margin-top:10px}
 .jobs-table th{
   text-align:left;padding:8px 10px;font-size:0.7rem;color:#aaa;
@@ -99,10 +95,23 @@ body{
   border-bottom:2px solid rgba(204,0,0,0.3);margin-bottom:4px;
   display:flex;justify-content:space-between;align-items:center;
 }
+.rep-header.est-header{color:#4ea8ff;border-bottom-color:rgba(78,168,255,0.3)}
 .rep-total{font-size:0.85rem;color:#fff;font-weight:600}
 .empty-msg{color:#555;font-style:italic;padding:10px;font-size:0.85rem}
 
-/* STATUS */
+.tab-bar{display:flex;gap:4px;margin-bottom:12px}
+.tab{
+  padding:10px 20px;border-radius:8px 8px 0 0;
+  font-weight:700;font-size:0.85rem;letter-spacing:1px;
+  cursor:pointer;border:1px solid rgba(255,255,255,0.1);
+  border-bottom:none;background:rgba(255,255,255,0.03);color:#666;
+  transition:all 0.2s;
+}
+.tab.active{background:rgba(204,0,0,0.15);color:#CC0000;border-color:rgba(204,0,0,0.3)}
+.tab.est-tab.active{background:rgba(78,168,255,0.15);color:#4ea8ff;border-color:rgba(78,168,255,0.3)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
 .status{
   position:fixed;bottom:20px;right:20px;padding:12px 24px;border-radius:10px;
   font-weight:700;font-size:0.85rem;opacity:0;transition:opacity 0.3s;z-index:999;
@@ -112,14 +121,8 @@ body{
 .status.err{background:#4d1a1a;color:#ff4e4e;border:1px solid #7a2a2a}
 .status.info{background:#1a2a4d;color:#4e9eff;border:1px solid #2a4a7a}
 
-/* LINK TO DISPLAY */
-.display-link{
-  text-align:center;margin-top:12px;
-}
-.display-link a{
-  color:#CC0000;text-decoration:none;font-weight:600;font-size:0.9rem;
-  border-bottom:1px solid rgba(204,0,0,0.3);padding-bottom:2px;
-}
+.display-link{text-align:center;margin-top:12px}
+.display-link a{color:#CC0000;text-decoration:none;font-weight:600;font-size:0.9rem;border-bottom:1px solid rgba(204,0,0,0.3);padding-bottom:2px}
 .display-link a:hover{border-bottom-color:#CC0000}
 </style>
 </head>
@@ -133,49 +136,87 @@ body{
   </div>
 </div>
 
-<!-- Setup Banner (shown when no PAT configured) -->
 <div class="setup-banner" id="setupBanner" style="display:none">
   <h3>First-Time Setup</h3>
-  <p>Enter the GitHub token to enable saving. This is stored locally in your browser and never sent anywhere except GitHub.</p>
+  <p>Enter the GitHub token to enable saving.</p>
   <input type="password" id="setupToken" placeholder="Paste GitHub PAT here (ghp_...)">
   <br>
   <button onclick="saveToken()">Save Token</button>
 </div>
 
-<!-- Add Job Form -->
+<!-- ADD CONTRACT -->
 <div class="card">
-  <h2>Add Closed Job</h2>
+  <h2>Add Contract (Closed Job)</h2>
   <div class="form-row">
     <div class="form-group">
       <label>Sales Rep</label>
       <select id="fRep"></select>
     </div>
     <div class="form-group">
-      <label>Job Date</label>
+      <label>Week Of (Date)</label>
       <input type="date" id="fDate">
     </div>
     <div class="form-group">
-      <label>Job Amount ($)</label>
+      <label># of Contracts</label>
+      <input type="number" id="fCount" placeholder="3" min="0" step="1" value="1">
+    </div>
+    <div class="form-group">
+      <label>Total Amount ($)</label>
       <input type="number" id="fAmount" placeholder="450000" min="0" step="1000">
     </div>
     <div class="form-group">
       <label>Gross Profit %</label>
       <input type="number" id="fGP" placeholder="43.6" min="0" max="100" step="0.1">
     </div>
-    <button class="btn btn-add" onclick="addJob()">+ Add Job</button>
+    <button class="btn btn-add" onclick="addJob()">+ Add Contract</button>
   </div>
 </div>
 
-<!-- Settings -->
+<!-- ADD ESTIMATE -->
+<div class="card">
+  <h2 class="est-color">Add Estimate</h2>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Sales Rep</label>
+      <select id="fEstRep"></select>
+    </div>
+    <div class="form-group">
+      <label>Week Of (Date)</label>
+      <input type="date" id="fEstDate">
+    </div>
+    <div class="form-group">
+      <label># of Estimates</label>
+      <input type="number" id="fEstCount" placeholder="10" min="1" step="1">
+    </div>
+    <div class="form-group">
+      <label>Total Amount ($)</label>
+      <input type="number" id="fEstAmount" placeholder="850000" min="0" step="1000">
+    </div>
+    <button class="btn btn-est" onclick="addEstimate()">+ Add Estimate</button>
+  </div>
+</div>
+
+<!-- SETTINGS -->
 <div class="card">
   <h2>Settings</h2>
   <div class="settings-row">
     <div class="form-group">
-      <label>Max Revenue (Scale)</label>
+      <label>Contract Max (Scale)</label>
       <input type="number" id="fMaxRev" placeholder="6000000" min="1000000" step="500000">
     </div>
     <div class="form-group">
-      <label>Add/Remove Reps (comma separated)</label>
+      <label>Estimate Max (Scale)</label>
+      <input type="number" id="fMaxEstRev" placeholder="8000000" min="1000000" step="500000">
+    </div>
+    <div class="form-group">
+      <label>Backlog ($M)</label>
+      <input type="number" id="fBacklog" placeholder="2.78" min="0" step="0.01">
+    </div>
+    <button class="btn btn-add" style="background:#333;font-size:0.8rem" onclick="updateSettings()">Update</button>
+  </div>
+  <div class="settings-row" style="margin-top:8px">
+    <div class="form-group wide">
+      <label>Reps (comma separated)</label>
       <input type="text" id="fReps" placeholder="Bill, Dan D, Dan V, Ken, Scott">
     </div>
     <button class="btn btn-add" style="background:#333;font-size:0.8rem" onclick="updateSettings()">Update</button>
@@ -189,13 +230,21 @@ body{
   </div>
 </div>
 
-<!-- Current Jobs -->
+<!-- CURRENT DATA -->
 <div class="card">
-  <h2>Current Jobs</h2>
-  <div id="jobsList"></div>
+  <h2>Current Data</h2>
+  <div class="tab-bar">
+    <div class="tab active" onclick="switchTab('contracts')">Contracts</div>
+    <div class="tab est-tab" onclick="switchTab('estimates')">Estimates</div>
+  </div>
+  <div class="tab-content active" id="tabContracts">
+    <div id="jobsList"></div>
+  </div>
+  <div class="tab-content" id="tabEstimates">
+    <div id="estList"></div>
+  </div>
 </div>
 
-<!-- Save Button -->
 <button class="btn btn-save" id="saveBtn" onclick="publishData()">
   PUBLISH TO LEADERBOARD
 </button>
@@ -203,19 +252,22 @@ body{
   <a href="index.html" target="_blank">View Live Leaderboard &rarr;</a>
 </div>
 
-<!-- Status toast -->
 <div class="status" id="status"></div>
 
 <script>
-// ============================================
-// CONFIG
-// ============================================
 const REPO_OWNER = 'cassidysmartsheet-ux';
 const REPO_NAME = 'leaderboard';
 const DATA_FILE = 'data.json';
 const API_BASE = 'https://api.github.com';
 
-let DATA = { maxRevenue: 6000000, repOrder: ['Bill','Dan D','Dan V','Ken','Scott'], jobs: [] };
+let DATA = {
+  maxRevenue: 6000000,
+  maxEstimateRevenue: 8000000,
+  backlog: 0,
+  repOrder: ['Bill','Dan D','Dan V','Ken','Scott'],
+  jobs: [],
+  estimates: []
+};
 let fileSHA = null;
 let hasUnsaved = false;
 
@@ -224,20 +276,34 @@ let hasUnsaved = false;
 // ============================================
 window.addEventListener('DOMContentLoaded', async () => {
   const token = localStorage.getItem('gh_pat');
-  if (!token) {
-    document.getElementById('setupBanner').style.display = 'block';
-  }
+  if (!token) document.getElementById('setupBanner').style.display = 'block';
   document.getElementById('fToken').value = token || '';
-
-  // Set default date to today
   document.getElementById('fDate').valueAsDate = new Date();
+  document.getElementById('fEstDate').valueAsDate = new Date();
 
   await loadData();
-  populateRepSelect();
-  renderJobs();
+  populateRepSelects();
+  renderAll();
   document.getElementById('fMaxRev').value = DATA.maxRevenue;
+  document.getElementById('fMaxEstRev').value = DATA.maxEstimateRevenue || 8000000;
+  document.getElementById('fBacklog').value = DATA.backlog || 0;
   document.getElementById('fReps').value = DATA.repOrder.join(', ');
 });
+
+// ============================================
+// TABS
+// ============================================
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  if (tab === 'contracts') {
+    document.querySelector('.tab:first-child').classList.add('active');
+    document.getElementById('tabContracts').classList.add('active');
+  } else {
+    document.querySelector('.tab.est-tab').classList.add('active');
+    document.getElementById('tabEstimates').classList.add('active');
+  }
+}
 
 // ============================================
 // DATA LOADING
@@ -247,27 +313,28 @@ async function loadData() {
     showStatus('Loading data...', 'info');
     const token = localStorage.getItem('gh_pat');
     const headers = token ? { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github+json' } : {};
-
     const resp = await fetch(API_BASE + '/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + DATA_FILE, { headers });
-
     if (resp.ok) {
       const meta = await resp.json();
       fileSHA = meta.sha;
       const content = atob(meta.content.replace(/\n/g, ''));
       DATA = JSON.parse(content);
-      showStatus('Data loaded (' + DATA.jobs.length + ' jobs)', 'ok');
+      if (!DATA.estimates) DATA.estimates = [];
+      if (!DATA.backlog) DATA.backlog = 0;
+      if (!DATA.maxEstimateRevenue) DATA.maxEstimateRevenue = 8000000;
+      showStatus('Data loaded (' + DATA.jobs.length + ' contracts, ' + DATA.estimates.length + ' estimates)', 'ok');
     } else if (resp.status === 404) {
-      showStatus('No data yet - add jobs to get started', 'info');
+      showStatus('No data yet - add entries to get started', 'info');
     } else {
       throw new Error('HTTP ' + resp.status);
     }
   } catch(e) {
-    // Fallback: try loading from same-origin data.json (GitHub Pages)
     try {
       const r = await fetch('data.json?t=' + Date.now());
       if (r.ok) {
         DATA = await r.json();
-        showStatus('Data loaded from cache (' + DATA.jobs.length + ' jobs)', 'ok');
+        if (!DATA.estimates) DATA.estimates = [];
+        showStatus('Data loaded from cache', 'ok');
       }
     } catch(e2) {
       showStatus('Could not load data: ' + e.message, 'err');
@@ -292,8 +359,13 @@ async function publishData() {
   showStatus('Saving to GitHub...', 'info');
 
   try {
-    // Sort jobs by rep order then date
     DATA.jobs.sort((a, b) => {
+      const ai = DATA.repOrder.indexOf(a.rep);
+      const bi = DATA.repOrder.indexOf(b.rep);
+      if (ai !== bi) return ai - bi;
+      return a.date < b.date ? -1 : 1;
+    });
+    DATA.estimates.sort((a, b) => {
       const ai = DATA.repOrder.indexOf(a.rep);
       const bi = DATA.repOrder.indexOf(b.rep);
       if (ai !== bi) return ai - bi;
@@ -301,7 +373,6 @@ async function publishData() {
     });
 
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(DATA, null, 2))));
-
     const body = {
       message: 'Update leaderboard data (' + new Date().toLocaleDateString() + ')',
       content: content,
@@ -325,15 +396,15 @@ async function publishData() {
       const result = await resp.json();
       fileSHA = result.content.sha;
       hasUnsaved = false;
+      renderAll();
       showStatus('Published! Leaderboard will update in ~60 seconds.', 'ok');
     } else {
       const err = await resp.json();
       if (resp.status === 409) {
-        showStatus('Conflict - someone else updated. Refreshing...', 'err');
-        await loadData();
-        renderJobs();
+        showStatus('Conflict - refreshing...', 'err');
+        await loadData(); renderAll();
       } else if (resp.status === 401 || resp.status === 403) {
-        showStatus('Token invalid or expired. Update in Settings.', 'err');
+        showStatus('Token invalid or expired.', 'err');
       } else {
         showStatus('Error: ' + (err.message || resp.status), 'err');
       }
@@ -347,36 +418,65 @@ async function publishData() {
 }
 
 // ============================================
-// ADD / DELETE JOBS
+// ADD / DELETE
 // ============================================
 function addJob() {
   const rep = document.getElementById('fRep').value;
   const date = document.getElementById('fDate').value;
+  const count = parseInt(document.getElementById('fCount').value) || 1;
   const amount = parseFloat(document.getElementById('fAmount').value);
   const gp = parseFloat(document.getElementById('fGP').value);
 
   if (!rep) { showStatus('Select a rep', 'err'); return; }
   if (!date) { showStatus('Enter a date', 'err'); return; }
-  if (!amount || amount <= 0) { showStatus('Enter a valid amount', 'err'); return; }
+  if (!amount || amount < 0) { showStatus('Enter a valid amount', 'err'); return; }
   if (isNaN(gp) || gp < 0 || gp > 100) { showStatus('Enter GP% (0-100)', 'err'); return; }
 
-  DATA.jobs.push({ rep, date, amount, gp });
+  DATA.jobs.push({ rep, date, count, amount, gp });
   hasUnsaved = true;
-  renderJobs();
-  showStatus('Added ' + fmt(amount) + ' job for ' + rep + ' - click PUBLISH to save', 'ok');
-
-  // Clear amount for next entry
+  renderAll();
+  showStatus('Added ' + count + ' contract(s) ' + fmt(amount) + ' for ' + rep, 'ok');
   document.getElementById('fAmount').value = '';
   document.getElementById('fGP').value = '';
+  document.getElementById('fCount').value = '1';
+}
+
+function addEstimate() {
+  const rep = document.getElementById('fEstRep').value;
+  const date = document.getElementById('fEstDate').value;
+  const count = parseInt(document.getElementById('fEstCount').value);
+  const amount = parseFloat(document.getElementById('fEstAmount').value);
+
+  if (!rep) { showStatus('Select a rep', 'err'); return; }
+  if (!date) { showStatus('Enter a date', 'err'); return; }
+  if (!count || count < 0) { showStatus('Enter estimate count', 'err'); return; }
+  if (!amount || amount < 0) { showStatus('Enter a valid amount', 'err'); return; }
+
+  DATA.estimates.push({ rep, date, count, amount });
+  hasUnsaved = true;
+  renderAll();
+  showStatus('Added ' + count + ' estimate(s) ' + fmt(amount) + ' for ' + rep, 'ok');
+  document.getElementById('fEstCount').value = '';
+  document.getElementById('fEstAmount').value = '';
 }
 
 function deleteJob(idx) {
   const job = DATA.jobs[idx];
-  if (confirm('Delete ' + fmt(job.amount) + ' job for ' + job.rep + ' on ' + job.date + '?')) {
+  if (confirm('Delete ' + fmt(job.amount) + ' contract for ' + job.rep + '?')) {
     DATA.jobs.splice(idx, 1);
     hasUnsaved = true;
-    renderJobs();
-    showStatus('Job deleted - click PUBLISH to save', 'info');
+    renderAll();
+    showStatus('Contract deleted', 'info');
+  }
+}
+
+function deleteEstimate(idx) {
+  const est = DATA.estimates[idx];
+  if (confirm('Delete ' + fmt(est.amount) + ' estimate for ' + est.rep + '?')) {
+    DATA.estimates.splice(idx, 1);
+    hasUnsaved = true;
+    renderAll();
+    showStatus('Estimate deleted', 'info');
   }
 }
 
@@ -385,16 +485,20 @@ function deleteJob(idx) {
 // ============================================
 function updateSettings() {
   const maxRev = parseFloat(document.getElementById('fMaxRev').value);
+  const maxEstRev = parseFloat(document.getElementById('fMaxEstRev').value);
+  const backlog = parseFloat(document.getElementById('fBacklog').value);
   const repsStr = document.getElementById('fReps').value;
 
   if (maxRev && maxRev > 0) DATA.maxRevenue = maxRev;
+  if (maxEstRev && maxEstRev > 0) DATA.maxEstimateRevenue = maxEstRev;
+  if (!isNaN(backlog)) DATA.backlog = backlog;
   if (repsStr.trim()) {
     DATA.repOrder = repsStr.split(',').map(s => s.trim()).filter(s => s);
   }
 
   hasUnsaved = true;
-  populateRepSelect();
-  renderJobs();
+  populateRepSelects();
+  renderAll();
   showStatus('Settings updated - click PUBLISH to save', 'ok');
 }
 
@@ -405,7 +509,7 @@ function saveToken() {
     document.getElementById('setupBanner').style.display = 'none';
     document.getElementById('fToken').value = token.trim();
     showStatus('Token saved', 'ok');
-    loadData().then(() => { renderJobs(); });
+    loadData().then(() => { renderAll(); });
   } else {
     showStatus('Enter a valid token', 'err');
   }
@@ -414,56 +518,98 @@ function saveToken() {
 // ============================================
 // RENDERING
 // ============================================
-function populateRepSelect() {
-  const sel = document.getElementById('fRep');
-  sel.innerHTML = '<option value="">-- Select --</option>';
-  DATA.repOrder.forEach(r => {
-    const o = document.createElement('option');
-    o.value = r; o.textContent = r;
-    sel.appendChild(o);
+function populateRepSelects() {
+  ['fRep','fEstRep'].forEach(id => {
+    const sel = document.getElementById(id);
+    sel.innerHTML = '<option value="">-- Select --</option>';
+    DATA.repOrder.forEach(r => {
+      const o = document.createElement('option');
+      o.value = r; o.textContent = r;
+      sel.appendChild(o);
+    });
   });
+}
+
+function renderAll() {
+  renderJobs();
+  renderEstimates();
+  updateSaveBtn();
 }
 
 function renderJobs() {
   const container = document.getElementById('jobsList');
   container.innerHTML = '';
-
   if (DATA.jobs.length === 0) {
-    container.innerHTML = '<div class="empty-msg">No jobs yet. Add one above!</div>';
+    container.innerHTML = '<div class="empty-msg">No contracts yet.</div>';
     return;
   }
 
-  // Group by rep in order
   DATA.repOrder.forEach(rep => {
-    const repJobs = DATA.jobs
-      .map((j, i) => ({...j, _idx: i}))
-      .filter(j => j.rep === rep)
+    const repJobs = DATA.jobs.map((j, i) => ({...j, _idx: i})).filter(j => j.rep === rep)
       .sort((a, b) => a.date < b.date ? -1 : 1);
-
     if (repJobs.length === 0) return;
 
     const total = repJobs.reduce((s, j) => s + j.amount, 0);
+    const totalCnt = repJobs.reduce((s, j) => s + (j.count||1), 0);
     const avgGP = repJobs.reduce((s, j) => s + j.gp, 0) / repJobs.length;
+    const gpDollar = repJobs.reduce((s, j) => s + (j.amount * j.gp / 100), 0);
 
     const section = document.createElement('div');
     section.className = 'rep-section';
-    section.innerHTML = '<div class="rep-header"><span>' + rep + ' (' + repJobs.length + ' jobs)</span><span class="rep-total">' + fmt(total) + ' | GP: ' + avgGP.toFixed(1) + '%</span></div>';
+    section.innerHTML = '<div class="rep-header"><span>' + rep + ' (' + totalCnt + ' contracts)</span><span class="rep-total">' + fmt(total) + ' | GP: ' + avgGP.toFixed(1) + '% | GP$: ' + fmt(Math.round(gpDollar)) + '</span></div>';
 
     const table = document.createElement('table');
     table.className = 'jobs-table';
-    table.innerHTML = '<tr><th>Date</th><th>Amount</th><th>GP%</th><th></th></tr>';
+    table.innerHTML = '<tr><th>Date</th><th>Count</th><th>Amount</th><th>GP%</th><th>GP$</th><th></th></tr>';
 
     repJobs.forEach(j => {
+      const gpd = Math.round(j.amount * j.gp / 100);
       const tr = document.createElement('tr');
-      tr.innerHTML = '<td>' + j.date + '</td><td>' + fmt(j.amount) + '</td><td>' + j.gp.toFixed(1) + '%</td><td><button class="btn btn-del" onclick="deleteJob(' + j._idx + ')">Delete</button></td>';
+      tr.innerHTML = '<td>' + j.date + '</td><td>' + (j.count||1) + '</td><td>' + fmt(j.amount) + '</td><td>' + j.gp.toFixed(1) + '%</td><td>' + fmt(gpd) + '</td><td><button class="btn btn-del" onclick="deleteJob(' + j._idx + ')">Delete</button></td>';
       table.appendChild(tr);
     });
 
     section.appendChild(table);
     container.appendChild(section);
   });
+}
 
-  // Update save button text
+function renderEstimates() {
+  const container = document.getElementById('estList');
+  container.innerHTML = '';
+  if (!DATA.estimates || DATA.estimates.length === 0) {
+    container.innerHTML = '<div class="empty-msg">No estimates yet.</div>';
+    return;
+  }
+
+  DATA.repOrder.forEach(rep => {
+    const repEsts = DATA.estimates.map((e, i) => ({...e, _idx: i})).filter(e => e.rep === rep)
+      .sort((a, b) => a.date < b.date ? -1 : 1);
+    if (repEsts.length === 0) return;
+
+    const total = repEsts.reduce((s, e) => s + e.amount, 0);
+    const totalCnt = repEsts.reduce((s, e) => s + e.count, 0);
+
+    const section = document.createElement('div');
+    section.className = 'rep-section';
+    section.innerHTML = '<div class="rep-header est-header"><span>' + rep + ' (' + totalCnt + ' estimates)</span><span class="rep-total">' + fmt(total) + '</span></div>';
+
+    const table = document.createElement('table');
+    table.className = 'jobs-table';
+    table.innerHTML = '<tr><th>Date</th><th>Count</th><th>Amount</th><th></th></tr>';
+
+    repEsts.forEach(e => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + e.date + '</td><td>' + e.count + '</td><td>' + fmt(e.amount) + '</td><td><button class="btn btn-del" onclick="deleteEstimate(' + e._idx + ')">Delete</button></td>';
+      table.appendChild(tr);
+    });
+
+    section.appendChild(table);
+    container.appendChild(section);
+  });
+}
+
+function updateSaveBtn() {
   const btn = document.getElementById('saveBtn');
   if (hasUnsaved) {
     btn.textContent = 'PUBLISH TO LEADERBOARD (unsaved changes)';
@@ -474,9 +620,6 @@ function renderJobs() {
   }
 }
 
-// ============================================
-// HELPERS
-// ============================================
 function fmt(v) {
   if (v >= 1000000) return '$' + (v/1000000).toFixed(2) + 'M';
   if (v >= 1000) return '$' + (v/1000).toFixed(0) + 'K';
@@ -491,12 +634,8 @@ function showStatus(msg, type) {
   el._timer = setTimeout(() => { el.className = 'status'; }, 4000);
 }
 
-// Warn before leaving with unsaved changes
 window.addEventListener('beforeunload', (e) => {
-  if (hasUnsaved) {
-    e.preventDefault();
-    e.returnValue = '';
-  }
+  if (hasUnsaved) { e.preventDefault(); e.returnValue = ''; }
 });
 </script>
 </body>
