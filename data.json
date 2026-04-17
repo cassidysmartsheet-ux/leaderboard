@@ -39,6 +39,13 @@
       "gp": 0
     },
     {
+      "rep": "Bill",
+      "date": "2026-04-08",
+      "count": 4,
+      "amount": 271844,
+      "gp": 0
+    },
+    {
       "rep": "Dan D",
       "date": "2026-03-10",
       "count": 1,
@@ -57,6 +64,13 @@
       "date": "2026-03-24",
       "count": 5,
       "amount": 195020,
+      "gp": 0
+    },
+    {
+      "rep": "Dan V",
+      "date": "2026-04-08",
+      "count": 4,
+      "amount": 422300,
       "gp": 0
     },
     {
@@ -81,6 +95,13 @@
       "gp": 0
     },
     {
+      "rep": "Ken",
+      "date": "2026-04-08",
+      "count": 1,
+      "amount": 100514,
+      "gp": 0
+    },
+    {
       "rep": "Scott",
       "date": "2026-03-10",
       "count": 1,
@@ -100,6 +121,13 @@
       "count": 1,
       "amount": 3085,
       "gp": 0
+    },
+    {
+      "rep": "Scott",
+      "date": "2026-04-08",
+      "count": 3,
+      "amount": 748956,
+      "gp": 0
     }
   ],
   "estimates": [
@@ -110,34 +138,28 @@
       "amount": 2543029
     },
     {
-      "rep": "Dan D",
-      "date": "2026-03-24",
-      "count": 1,
-      "amount": 994805
-    },
-    {
-      "rep": "Dan V",
-      "date": "2026-03-24",
-      "count": 14,
-      "amount": 1916381
-    },
-    {
-      "rep": "Ken",
-      "date": "2026-03-24",
-      "count": 6,
-      "amount": 393989
-    },
-    {
-      "rep": "Scott",
-      "date": "2026-03-24",
-      "count": 10,
-      "amount": 845235
-    },
-    {
       "rep": "Bill",
       "date": "2026-03-31",
       "count": 9,
       "amount": 944763
+    },
+    {
+      "rep": "Bill",
+      "date": "2026-04-08",
+      "count": 13,
+      "amount": 779191
+    },
+    {
+      "rep": "Bill",
+      "date": "2026-04-08",
+      "count": 13,
+      "amount": 779191
+    },
+    {
+      "rep": "Dan D",
+      "date": "2026-03-24",
+      "count": 1,
+      "amount": 994805
     },
     {
       "rep": "Dan D",
@@ -146,10 +168,34 @@
       "amount": 4543800
     },
     {
+      "rep": "Dan D",
+      "date": "2026-04-08",
+      "count": 4,
+      "amount": 4278956
+    },
+    {
+      "rep": "Dan V",
+      "date": "2026-03-24",
+      "count": 14,
+      "amount": 1916381
+    },
+    {
       "rep": "Dan V",
       "date": "2026-03-31",
       "count": 17,
       "amount": 3534184
+    },
+    {
+      "rep": "Dan V",
+      "date": "2026-04-08",
+      "count": 14,
+      "amount": 2606639
+    },
+    {
+      "rep": "Ken",
+      "date": "2026-03-24",
+      "count": 6,
+      "amount": 393989
     },
     {
       "rep": "Ken",
@@ -158,10 +204,28 @@
       "amount": 655484
     },
     {
+      "rep": "Ken",
+      "date": "2026-04-08",
+      "count": 3,
+      "amount": 465000
+    },
+    {
+      "rep": "Scott",
+      "date": "2026-03-24",
+      "count": 10,
+      "amount": 845235
+    },
+    {
       "rep": "Scott",
       "date": "2026-03-31",
       "count": 7,
       "amount": 883365
+    },
+    {
+      "rep": "Scott",
+      "date": "2026-04-08",
+      "count": 15,
+      "amount": 3151316
     }
   ]
 }
