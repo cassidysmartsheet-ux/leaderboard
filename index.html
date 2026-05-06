@@ -292,6 +292,10 @@ async function loadAndRender(){
     if(t>maxEstRev){ maxEstRev=t; estLeader=r }
   });
 
+  // Auto-grow cap: keep at least $500K headroom above the leader so bars never max out
+  var estCeiling = Math.ceil(maxEstRev / 500000) * 500000 + 500000;
+  if(estCeiling > MAX_EST_REV) MAX_EST_REV = estCeiling;
+
   // Estimate scale
   var estScaleVals=[];
   var estStep = MAX_EST_REV >= 10000000 ? 2000000 : MAX_EST_REV >= 4000000 ? 1000000 : 500000;
@@ -411,6 +415,10 @@ async function loadAndRender(){
     var t=0; jobGrouped[r].forEach(function(j){ t+=j.amount });
     if(t>maxConRev){ maxConRev=t; conLeader=r }
   });
+
+  // Auto-grow cap: keep at least $500K headroom above the leader so bars never max out
+  var conCeiling = Math.ceil(maxConRev / 500000) * 500000 + 500000;
+  if(conCeiling > MAX_REV) MAX_REV = conCeiling;
 
   // Contract scale
   var conScaleVals=[];
