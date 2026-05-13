@@ -168,6 +168,10 @@ body{
       <label>Gross Profit %</label>
       <input type="number" id="fGP" placeholder="43.6" min="0" max="100" step="0.1">
     </div>
+    <div class="form-group">
+      <label>Gross Profit $</label>
+      <input type="number" id="fGPDollar" placeholder="0" min="0" step="1" value="0">
+    </div>
     <button class="btn btn-add" onclick="addJob()">+ Add Contract</button>
   </div>
 </div>
@@ -426,18 +430,20 @@ function addJob() {
   const count = parseInt(document.getElementById('fCount').value) || 1;
   const amount = parseFloat(document.getElementById('fAmount').value);
   const gp = parseFloat(document.getElementById('fGP').value);
+  const gpDollar = parseFloat(document.getElementById('fGPDollar').value) || 0;
 
   if (!rep) { showStatus('Select a rep', 'err'); return; }
   if (!date) { showStatus('Enter a date', 'err'); return; }
   if (!amount || amount < 0) { showStatus('Enter a valid amount', 'err'); return; }
   if (isNaN(gp) || gp < 0 || gp > 100) { showStatus('Enter GP% (0-100)', 'err'); return; }
 
-  DATA.jobs.push({ rep, date, count, amount, gp });
+  DATA.jobs.push({ rep, date, count, amount, gp, gpDollar });
   hasUnsaved = true;
   renderAll();
   showStatus('Added ' + count + ' contract(s) ' + fmt(amount) + ' for ' + rep, 'ok');
   document.getElementById('fAmount').value = '';
   document.getElementById('fGP').value = '';
+  document.getElementById('fGPDollar').value = '0';
   document.getElementById('fCount').value = '1';
 }
 
@@ -551,8 +557,9 @@ function renderJobs() {
 
     const total = repJobs.reduce((s, j) => s + j.amount, 0);
     const totalCnt = repJobs.reduce((s, j) => s + (j.count||1), 0);
-    const avgGP = repJobs.reduce((s, j) => s + j.gp, 0) / repJobs.length;
-    const gpDollar = repJobs.reduce((s, j) => s + (j.amount * j.gp / 100), 0);
+    let avgGP = 0;
+    for (let _li = repJobs.length - 1; _li >= 0; _li--) { if (repJobs[_li].gp > 0) { avgGP = repJobs[_li].gp; break; } }
+    const gpDollar = repJobs.reduce((s, j) => s + (j.gpDollar || 0), 0);
 
     const section = document.createElement('div');
     section.className = 'rep-section';
@@ -563,7 +570,7 @@ function renderJobs() {
     table.innerHTML = '<tr><th>Date</th><th>Count</th><th>Amount</th><th>GP%</th><th>GP$</th><th></th></tr>';
 
     repJobs.forEach(j => {
-      const gpd = Math.round(j.amount * j.gp / 100);
+      const gpd = Math.round(j.gpDollar || 0);
       const tr = document.createElement('tr');
       tr.innerHTML = '<td>' + j.date + '</td><td>' + (j.count||1) + '</td><td>' + fmt(j.amount) + '</td><td>' + j.gp.toFixed(1) + '%</td><td>' + fmt(gpd) + '</td><td><button class="btn btn-del" onclick="deleteJob(' + j._idx + ')">Delete</button></td>';
       table.appendChild(tr);
