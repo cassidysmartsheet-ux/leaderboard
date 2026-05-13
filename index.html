@@ -448,17 +448,21 @@ async function loadAndRender(){
   var totalConCount=0, totalConAmt=0, totalGPDollar=0;
   REP_ORDER.forEach(function(rep,ri){
     var jobs = jobGrouped[rep];
-    var total=0, totalCnt=0, gpSum=0, gpDollar=0;
+    var total=0, totalCnt=0, gpDollar=0;
     jobs.forEach(function(j){
       total+=j.amount;
       totalCnt+=(j.count||1);
-      gpSum+=j.gp;
-      gpDollar+=(j.amount * (j.gp/100));
+      gpDollar+=(j.gpDollar||0);
     });
+    var _sortedJobs = jobs.slice().sort(function(a,b){ return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+    var _latestGP = 0;
+    for (var _li = _sortedJobs.length - 1; _li >= 0; _li--) {
+      if (_sortedJobs[_li].gp > 0) { _latestGP = _sortedJobs[_li].gp; break; }
+    }
     totalConCount += totalCnt;
     totalConAmt += total;
     totalGPDollar += gpDollar;
-    var avgGP = jobs.length ? (gpSum/jobs.length) : 0;
+    var avgGP = _latestGP;
     var isLead = (rep===conLeader);
 
     var col = document.createElement('div');
