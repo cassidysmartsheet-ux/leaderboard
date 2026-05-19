@@ -81,6 +81,14 @@
       "gp": 43.2
     },
     {
+      "rep": "Bill",
+      "date": "2026-05-19",
+      "count": 4,
+      "amount": 47801,
+      "gp": 0,
+      "gpDollar": 0
+    },
+    {
       "rep": "Dan D",
       "date": "2026-03-10",
       "count": 1,
@@ -114,6 +122,14 @@
       "count": 5,
       "amount": 1211129,
       "gp": 63.5
+    },
+    {
+      "rep": "Dan D",
+      "date": "2026-05-19",
+      "count": 1,
+      "amount": 52405,
+      "gp": 0,
+      "gpDollar": 0
     },
     {
       "rep": "Dan V",
@@ -156,6 +172,14 @@
       "count": 1,
       "amount": 15500,
       "gp": 0
+    },
+    {
+      "rep": "Dan V",
+      "date": "2026-05-19",
+      "count": 3,
+      "amount": 97515,
+      "gp": 0,
+      "gpDollar": 0
     },
     {
       "rep": "Ken",
@@ -205,6 +229,14 @@
       "count": 2,
       "amount": 31943,
       "gp": 0
+    },
+    {
+      "rep": "Ken",
+      "date": "2026-05-19",
+      "count": 1,
+      "amount": 5508,
+      "gp": 0,
+      "gpDollar": 0
     },
     {
       "rep": "Scott",
@@ -268,6 +300,14 @@
       "count": 4,
       "amount": 33690,
       "gp": 41.8
+    },
+    {
+      "rep": "Scott",
+      "date": "2026-05-19",
+      "count": 1,
+      "amount": 462305,
+      "gp": 0,
+      "gpDollar": 0
     }
   ],
   "estimates": [
