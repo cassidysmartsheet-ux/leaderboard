@@ -105,6 +105,14 @@
       "gpDollar": 0
     },
     {
+      "rep": "Bill",
+      "date": "2026-06-09",
+      "count": 1,
+      "amount": 92482,
+      "gp": 0,
+      "gpDollar": 0
+    },
+    {
       "rep": "Dan D",
       "date": "2026-03-10",
       "count": 1,
@@ -222,6 +230,14 @@
       "gpDollar": 0
     },
     {
+      "rep": "Dan V",
+      "date": "2026-06-09",
+      "count": 2,
+      "amount": 607193,
+      "gp": 0,
+      "gpDollar": 0
+    },
+    {
       "rep": "Ken",
       "date": "2026-03-10",
       "count": 1,
@@ -283,6 +299,14 @@
       "date": "2026-06-02",
       "count": 1,
       "amount": 113000,
+      "gp": 0,
+      "gpDollar": 0
+    },
+    {
+      "rep": "Ken",
+      "date": "2026-06-09",
+      "count": 3,
+      "amount": 125763,
       "gp": 0,
       "gpDollar": 0
     },
@@ -370,6 +394,14 @@
       "date": "2026-06-02",
       "count": 1,
       "amount": 250780,
+      "gp": 0,
+      "gpDollar": 0
+    },
+    {
+      "rep": "Scott",
+      "date": "2026-06-09",
+      "count": 7,
+      "amount": 516878,
       "gp": 0,
       "gpDollar": 0
     }
