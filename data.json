@@ -527,6 +527,14 @@
     },
     {
       "rep": "Scott",
+      "date": "2026-07-07",
+      "count": 1,
+      "amount": 52100,
+      "gp": 0,
+      "gpDollar": 0
+    },
+    {
+      "rep": "Scott",
       "date": "2026-07-14",
       "count": 3,
       "amount": 445490,
