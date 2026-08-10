@@ -144,6 +144,14 @@ body{
   <button onclick="saveToken()">Save Token</button>
 </div>
 
+<div class="setup-banner" id="permBanner" style="display:none;border-color:#CC0000">
+  <h3 id="permTitle">Token Problem</h3>
+  <p id="permMsg"></p>
+  <input type="password" id="permToken" placeholder="Paste a cassidysmartsheet-ux PAT with write access">
+  <br>
+  <button onclick="saveToken()">Save Token</button>
+</div>
+
 <!-- ADD CONTRACT -->
 <div class="card">
   <h2>Add Contract (Closed Job)</h2>
@@ -292,7 +300,59 @@ window.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('fMaxEstRev').value = DATA.maxEstimateRevenue || 8000000;
   document.getElementById('fBacklog').value = DATA.backlog || 0;
   document.getElementById('fReps').value = DATA.repOrder.join(', ');
+  await verifyToken();
 });
+
+// ============================================
+// TOKEN PREFLIGHT - catches a read-only / wrong-account token
+// BEFORE anyone spends 20 minutes typing data that cannot be saved.
+// ============================================
+let TOKEN_OK = false;
+let TOKEN_LOGIN = '';
+
+function showPermBanner(title, msg) {
+  document.getElementById('permTitle').textContent = title;
+  document.getElementById('permMsg').textContent = msg;
+  document.getElementById('permBanner').style.display = 'block';
+}
+
+async function verifyToken() {
+  TOKEN_OK = false; TOKEN_LOGIN = '';
+  const token = localStorage.getItem('gh_pat');
+  const banner = document.getElementById('permBanner');
+  banner.style.display = 'none';
+  if (!token) return;
+
+  const h = { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github+json' };
+  try {
+    const who = await fetch(API_BASE + '/user', { headers: h });
+    if (who.status === 401) {
+      showPermBanner('Token rejected by GitHub (401)',
+        'This token is invalid, revoked, or expired. Publishing will fail. Paste a current cassidysmartsheet-ux token below.');
+      return;
+    }
+    TOKEN_LOGIN = (await who.json()).login || '(unknown)';
+
+    const repo = await fetch(API_BASE + '/repos/' + REPO_OWNER + '/' + REPO_NAME, { headers: h });
+    if (!repo.ok) {
+      showPermBanner('Cannot read the leaderboard repo (' + repo.status + ')',
+        'Signed in as "' + TOKEN_LOGIN + '", but this token cannot reach ' + REPO_OWNER + '/' + REPO_NAME + '.');
+      return;
+    }
+    const perms = (await repo.json()).permissions || {};
+    if (!perms.push) {
+      showPermBanner('This token cannot publish - it is READ ONLY',
+        'The saved token belongs to the "' + TOKEN_LOGIN + '" account, which only has read access to ' +
+        REPO_OWNER + '/' + REPO_NAME + '. Everything below will load and look normal, but PUBLISH will fail ' +
+        'and your entries will be lost when you close this tab. Paste a token from the "' + REPO_OWNER +
+        '" account that has write access.');
+      return;
+    }
+    TOKEN_OK = true;
+  } catch (e) {
+    showPermBanner('Could not verify token', 'Network error while checking GitHub: ' + e.message);
+  }
+}
 
 // ============================================
 // TABS
@@ -407,10 +467,17 @@ async function publishData() {
       if (resp.status === 409) {
         showStatus('Conflict - refreshing...', 'err');
         await loadData(); renderAll();
-      } else if (resp.status === 401 || resp.status === 403) {
-        showStatus('Token invalid or expired.', 'err');
+      } else if (resp.status === 401) {
+        showStatus('NOT SAVED - GitHub rejected the token (401). It is invalid, revoked, or expired.', 'err', true);
+        showPermBanner('Token rejected by GitHub (401)',
+          'Publishing failed. This token is invalid, revoked, or expired. Your entries are still on screen - paste a working token below, then click PUBLISH again.');
+      } else if (resp.status === 403) {
+        showStatus('NOT SAVED - the "' + (TOKEN_LOGIN || 'saved') + '" token has no write access to this repo (403).', 'err', true);
+        showPermBanner('This token cannot publish - it is READ ONLY',
+          'Publishing failed with 403. The token belongs to "' + (TOKEN_LOGIN || 'an account') + '", which has read-only access to ' +
+          REPO_OWNER + '/' + REPO_NAME + '. Your entries are still on screen - paste a token with write access below, then click PUBLISH again.');
       } else {
-        showStatus('Error: ' + (err.message || resp.status), 'err');
+        showStatus('NOT SAVED - error ' + resp.status + ': ' + (err.message || 'unknown'), 'err', true);
       }
     }
   } catch(e) {
@@ -509,13 +576,15 @@ function updateSettings() {
 }
 
 function saveToken() {
-  const token = document.getElementById('fToken').value || document.getElementById('setupToken')?.value;
+  const token = document.getElementById('fToken').value || document.getElementById('setupToken')?.value || document.getElementById('permToken')?.value;
   if (token && token.trim()) {
     localStorage.setItem('gh_pat', token.trim());
     document.getElementById('setupBanner').style.display = 'none';
     document.getElementById('fToken').value = token.trim();
-    showStatus('Token saved', 'ok');
-    loadData().then(() => { renderAll(); });
+    showStatus('Token saved - checking permissions...', 'ok');
+    loadData().then(() => { renderAll(); return verifyToken(); }).then(() => {
+      if (TOKEN_OK) showStatus('Token saved and verified for ' + TOKEN_LOGIN + ' - publishing enabled', 'ok');
+    });
   } else {
     showStatus('Enter a valid token', 'err');
   }
@@ -633,11 +702,12 @@ function fmt(v) {
   return '$' + v;
 }
 
-function showStatus(msg, type) {
+function showStatus(msg, type, sticky) {
   const el = document.getElementById('status');
   el.textContent = msg;
   el.className = 'status show ' + type;
   clearTimeout(el._timer);
+  if (sticky) return;
   el._timer = setTimeout(() => { el.className = 'status'; }, 4000);
 }
 
