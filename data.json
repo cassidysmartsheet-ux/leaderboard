@@ -169,6 +169,14 @@
       "gpDollar": 0
     },
     {
+      "rep": "Bill",
+      "date": "2026-08-04",
+      "count": 1,
+      "amount": 196949,
+      "gp": 0,
+      "gpDollar": 0
+    },
+    {
       "rep": "Dan D",
       "date": "2026-03-10",
       "count": 1,
@@ -362,6 +370,14 @@
       "date": "2026-07-28",
       "count": 5,
       "amount": 137750,
+      "gp": 0,
+      "gpDollar": 0
+    },
+    {
+      "rep": "Dan V",
+      "date": "2026-08-04",
+      "count": 1,
+      "amount": 6800,
       "gp": 0,
       "gpDollar": 0
     },
